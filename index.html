@@ -18,7 +18,6 @@
             position: relative;
             display: inline-block;
             padding-bottom: 0.5rem;
-            /* Added for a subtle shadow effect on hover */
             transition: all 0.3s ease-in-out;
         }
         .section-title::after {
@@ -30,10 +29,10 @@
             height: 3px;
             background-color: #6366f1; /* Indigo 500 */
             border-radius: 9999px; /* Fully rounded */
-            transition: width 0.3s ease-in-out; /* Smooth transition for underline */
+            transition: width 0.3s ease-in-out;
         }
         .section-title:hover::after {
-            width: 100%; /* Expand underline on hover */
+            width: 100%;
         }
         /* Custom animation for section entry - subtle fade-in */
         .fade-in-section {
@@ -179,9 +178,9 @@
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Languages</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li><strong class="text-gray-800">Python</strong></li>
-                            <li><strong class="text-gray-800">Java</strong></li>
-                            <li><strong class="text-gray-800">JavaScript</strong></li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
                             <li>TypeScript</li>
                             <li>SQL</li>
                             <li>XSLT</li>
@@ -191,10 +190,10 @@
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Frontend Development</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li><strong class="text-gray-800">HTML5, CSS3</strong></li>
-                            <li><strong class="text-gray-800">JavaScript, TypeScript</strong></li>
+                            <li>HTML5, CSS3</li>
+                            <li>JavaScript, TypeScript</li>
                             <li>AJAX, jQuery</li>
-                            <li><strong class="text-gray-800">Node.js, React.js</strong></li>
+                            <li>Node.js, React.js</li>
                             <li>Bootstrap, Responsive Design</li>
                         </ul>
                     </div>
@@ -202,8 +201,8 @@
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Backend Development</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li><strong class="text-gray-800">Flask, Django</strong></li>
-                            <li><strong class="text-gray-800">Spring Boot, Spring</strong></li>
+                            <li>Flask, Django</li>
+                            <li>Spring Boot, Spring</li>
                             <li>J2EE, Hibernate</li>
                             <li>RESTful Web Services</li>
                         </ul>
@@ -212,18 +211,18 @@
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Cloud & Infrastructure</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li><strong class="text-gray-800">AWS, Azure</strong></li>
+                            <li>AWS, Azure</li>
                             <li>Docker, Kubernetes</li>
-                            <li><strong class="text-gray-800">AWS ECS, Lambda, S3, Route 53, KMS, Secrets Manager</strong></li>
-                            <li><strong class="text-gray-800">AWS CDK, Boto3</strong></li>
-                            <li><strong class="text-gray-800">CI/CD (AWS CodePipeline, CodeBuild, ECR)</strong></li>
+                            <li>AWS ECS, Lambda, S3, Route 53, KMS, Secrets Manager</li>
+                            <li>AWS CDK, Boto3</li>
+                            <li>CI/CD (AWS CodePipeline, CodeBuild, ECR)</li>
                         </ul>
                     </div>
                     <!-- Databases -->
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Databases</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li><strong class="text-gray-800">MSSQL, MongoDB</strong></li>
+                            <li>MSSQL, MongoDB</li>
                             <li>Amazon DynamoDB, Amazon RDS</li>
                             <li>PostgreSQL, MySQL</li>
                         </ul>
@@ -232,11 +231,11 @@
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Tools & Methodologies</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li><strong class="text-gray-800">Version Control: GIT</strong></li>
+                            <li>Version Control: GIT</li>
                             <li>Build Tools: Maven, Gradle, Grunt, Webpack, Bower</li>
                             <li>Messaging: IBM MQ, Rabbit MQ</li>
-                            <li><strong class="text-gray-800">Testing: Selenium, Jest, Mocha, Chai, JUnit, Mockito, Postman</strong></li>
-                            <li><strong class="text-gray-800">Agile/Scrum</strong></li>
+                            <li>Testing: Selenium, Jest, Mocha, Chai, JUnit, Mockito, Postman</li>
+                            <li>Agile/Scrum</li>
                         </ul>
                     </div>
                 </div>
@@ -259,10 +258,6 @@
                                 <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">TensorFlow</span>
                                 <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Deep Learning</span>
                             </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300 rounded-md p-2">View Details <span class="ml-1">&#8599;</span></a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 font-medium transition duration-300 rounded-md p-2">GitHub <span class="ml-1">&#8599;</span></a>
-                            </div>
                         </div>
                     </div>
 
@@ -276,10 +271,6 @@
                                 <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Java</span>
                                 <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Android Studio</span>
                                 <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Mobile App</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300 rounded-md p-2">View Details <span class="ml-1">&#8599;</span></a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 font-medium transition duration-300 rounded-md p-2">GitHub <span class="ml-1">&#8599;</span></a>
                             </div>
                         </div>
                     </div>
@@ -295,10 +286,6 @@
                                 <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Flask</span>
                                 <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Web App</span>
                             </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300 rounded-md p-2">View Details <span class="ml-1">&#8599;</span></a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 font-medium transition duration-300 rounded-md p-2">GitHub <span class="ml-1">&#8599;</span></a>
-                            </div>
                         </div>
                     </div>
                     <!-- Project 4: IBM MQ Monitoring Application on AWS ECS -->
@@ -312,10 +299,6 @@
                                 <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Flask</span>
                                 <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full">AWS ECS</span>
                                 <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">RESTful APIs</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300 rounded-md p-2">View Details <span class="ml-1">&#8599;</span></a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 font-medium transition duration-300 rounded-md p-2">GitHub <span class="ml-1">&#8599;</span></a>
                             </div>
                         </div>
                     </div>
@@ -332,10 +315,6 @@
                                 <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">AWS CDK</span>
                                 <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">CI/CD</span>
                             </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300 rounded-md p-2">View Details <span class="ml-1">&#8599;</span></a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 font-medium transition duration-300 rounded-md p-2">GitHub <span class="ml-1">&#8599;</span></a>
-                            </div>
                         </div>
                     </div>
                     <!-- Project 6: X-ray Image Classification (Research) -->
@@ -349,10 +328,6 @@
                                 <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">TensorFlow</span>
                                 <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Deep Learning</span>
                                 <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Medical Imaging</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300 rounded-md p-2">View Details <span class="ml-1">&#8599;</span></a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 font-medium transition duration-300 rounded-md p-2">GitHub <span class="ml-1">&#8599;</span></a>
                             </div>
                         </div>
                     </div>
