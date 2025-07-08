@@ -38,6 +38,7 @@
             <a href="#" class="text-2xl font-bold text-indigo-600 rounded-md">Ashwanth Reddy</a>
             <ul class="hidden md:flex space-x-8">
                 <li><a href="#about" class="text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">About</a></li>
+                <li><a href="#experience" class="text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">Experience</a></li>
                 <li><a href="#skills" class="text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">Skills</a></li>
                 <li><a href="#projects" class="text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">Projects</a></li>
                 <li><a href="#contact" class="text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">Contact</a></li>
@@ -57,6 +58,7 @@
                 </svg>
             </button>
             <a href="#about" class="text-white text-3xl hover:text-indigo-400 transition duration-300 rounded-md p-3" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+            <a href="#experience" class="text-white text-3xl hover:text-indigo-400 transition duration-300 rounded-md p-3" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Experience</a>
             <a href="#skills" class="text-white text-3xl hover:text-indigo-400 transition duration-300 rounded-md p-3" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Skills</a>
             <a href="#projects" class="text-white text-3xl hover:text-indigo-400 transition duration-300 rounded-md p-3" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Projects</a>
             <a href="#contact" class="text-white text-3xl hover:text-indigo-400 transition duration-300 rounded-md p-3" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
@@ -97,8 +99,63 @@
             </div>
         </section>
 
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 px-6 md:px-12 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-gray-800 mb-8 section-title">Experience</h2>
+
+                <!-- Metasys LLC Experience -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8 border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Software Developer Associate - Metasys LLC</h3>
+                    <p class="text-gray-600 mb-4">Client: Pennsylvania Justice Network (JNET) | Mechanicsburg, PA | July 2023 - Present</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Developed and maintained IBM DataPower services including Web Service Proxy, Multi-Protocol Gateway (MPGW), GatewayScript and reverse proxy configurations for seamless backend integration.</li>
+                        <li>Implemented RBM with AD, configured Crypto Objects, AAA, SLM Policies, and enforced security and access controls on the appliance.</li>
+                        <li>Developed monitoring and reporting tools using Python and Java to collect DP Appliance metrics, monitor SSL/TLS and domain certificate expiry, scheduled disabling probes, automate backups to FTP servers, perform firmware upgrades, and manage operations via REST and XML Management Interface on IBM DataPower.</li>
+                        <li>Designed and developed a Python Flask-based IBM MQ monitoring application on AWS ECS, tracking queue depth and channel health with threshold-based alerting.</li>
+                        <li>Built RESTful microservices (LDAPService, Operations Dashboard, MSSQL & MongoDB Integration, data visualization, XML JSON parser and System-level automation) using AWS API, Load Balancer, Lambda, S3, and Route 53.</li>
+                        <li>Refactored Java code and implemented microservices using Spring Boot in ECS for AWS Messaging Infrastructure Modernization Project, efficiently processing notifications and integrating message flow from IBM MQ & Rabbit MQ.</li>
+                        <li>Developed Infrastructure as Code (IaC) using AWS CDK and leveraged Python SDK (Boto3) for integration across AWS services (S3, Route 53, ECS, Secrets Manager, KMS).</li>
+                        <li>Automated end-to-end CI/CD deployments using AWS CodePipeline, CodeBuild, and ECR for containerized application delivery.</li>
+                        <li>Actively contributed to the entire Software Development Life Cycle (SDLC) of application development, following Agile/Scrum methodologies.</li>
+                    </ul>
+                </div>
+
+                <!-- Texas A&M University Experience -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8 border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Graduate - Teaching & Research Assistant - Texas A&M University</h3>
+                    <p class="text-gray-600 mb-4">College of Science & Engineering | Corpus Christi, TX | Jan 2022 - May 2023</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Served as a Teaching Assistant for courses including EEEN3315 - Electrical Circuits II, EEE3350 - Electronic Systems Design, Circuit Analysis Laboratory, and Digital Systems Laboratory.</li>
+                        <li>Conducted research focused on identification and classification of X-ray images from the New Mexico Decedent Image Database (NMDID) for forensic and medical analysis.</li>
+                        <li>Designed and implemented a deep learning solution using a Triplet Network architecture to retrieve the top 10 visually similar images from an input X-ray.</li>
+                        <li>Developed a Python-based algorithm utilizing a CNN ResNet50 model with Triplet Loss to generate distinctive image embeddings.</li>
+                        <li>Preprocessed and organized large-scale medical datasets by converting DICOM to PNG, and structured image groups into anchor, positive, and negative sets for training.</li>
+                        <li>Leveraged Python libraries including TensorFlow, NumPy, Matplotlib, and pathlib for image preprocessing, augmentation, and building the dataset pipeline.</li>
+                        <li>Automated similarity score computation by dynamically managing datasets, reshaping image arrays, and generating ranked outputs.</li>
+                        <li>Visualized model results using 3D Slicer (v5.0.3) to display and evaluate the top 10 similar images for each input query.</li>
+                    </ul>
+                </div>
+
+                <!-- Invizo Technologies Pvt Ltd Experience -->
+                <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200">
+                    <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Programmer Analyst - Invizo Technologies Pvt Ltd</h3>
+                    <p class="text-gray-600 mb-4">Hyderabad, India | July 2019 - Mar 2021</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Worked on developing B2C product "ELIVIO" (Family Health, Personal Finance Management, Bill payments) and "TROVA" (Small-Medium industries for managing business operations & workforce).</li>
+                        <li>Utilized J2EE technologies (Spring Boot, Spring, Hibernate, Spring JDBC) to develop robust web applications and integrated RESTful Web Services for efficient data exchange and enhanced functionality.</li>
+                        <li>Employed front-end development techniques such as CSS Flexbox and Grid to create visually appealing and dynamic layouts, ensuring a seamless user experience across different devices.</li>
+                        <li>Experience in designing User Interface (UI) applications using HTML5, CSS, JavaScript, jQuery, AJAX, JSON, Bootstrap, and Responsive design.</li>
+                        <li>Ensured compliance with coding standards, source code control, build & deployment procedures, and performance tuning.</li>
+                        <li>Used Postman for API testing, JUnit for unit testing, logback for logging, and JBoss as the server.</li>
+                        <li>Utilized GitHub version control to track and maintain different versions of application code using VS Code and IntelliJ as IDEs and Maven as the build tool.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <!-- Skills Section -->
-        <section id="skills" class="py-16 px-6 md:px-12 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <section id="skills" class="py-16 px-6 md:px-12 bg-white rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-gray-800 mb-8 section-title">My Skills</h2>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
