@@ -18,6 +18,8 @@
             position: relative;
             display: inline-block;
             padding-bottom: 0.5rem;
+            /* Added for a subtle shadow effect on hover */
+            transition: all 0.3s ease-in-out;
         }
         .section-title::after {
             content: '';
@@ -28,6 +30,20 @@
             height: 3px;
             background-color: #6366f1; /* Indigo 500 */
             border-radius: 9999px; /* Fully rounded */
+            transition: width 0.3s ease-in-out; /* Smooth transition for underline */
+        }
+        .section-title:hover::after {
+            width: 100%; /* Expand underline on hover */
+        }
+        /* Custom animation for section entry - subtle fade-in */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -35,7 +51,7 @@
     <!-- Header/Navigation -->
     <header class="bg-white shadow-md py-4 px-6 md:px-12 fixed w-full z-10 rounded-b-lg">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-600 rounded-md">Ashwanth Reddy</a>
+            <a href="#" class="text-2xl font-bold text-indigo-600 rounded-md hover:text-indigo-800 transition duration-300">Ashwanth Reddy</a>
             <ul class="hidden md:flex space-x-8">
                 <li><a href="#about" class="text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">About</a></li>
                 <li><a href="#experience" class="text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">Experience</a></li>
@@ -44,7 +60,7 @@
                 <li><a href="#contact" class="text-gray-700 hover:text-indigo-600 transition duration-300 rounded-md p-2">Contact</a></li>
             </ul>
             <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none rounded-md p-2">
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none rounded-md p-2 hover:text-indigo-600 transition duration-300">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
@@ -52,7 +68,7 @@
         </nav>
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-gray-800 bg-opacity-90 z-20 flex flex-col items-center justify-center space-y-6">
-            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white focus:outline-none">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white focus:outline-none hover:text-indigo-400 transition duration-300">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -67,95 +83,95 @@
 
     <main class="pt-20">
         <!-- Hero Section -->
-        <section id="hero" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20 px-6 md:px-12 text-center rounded-b-xl shadow-lg">
+        <section id="hero" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20 px-6 md:px-12 text-center rounded-b-xl shadow-lg fade-in-section">
             <div class="container mx-auto max-w-4xl">
-                <img src="mypic.jpg" alt="Ashwanth Reddy Photo" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
+                <img src="mypic.jpg" alt="Ashwanth Reddy Photo" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-white shadow-lg transform transition duration-500 hover:scale-105">
                 <h1 class="text-5xl font-extrabold mb-4 leading-tight">Hi, I'm <span class="text-yellow-300">Ashwanth Reddy</span></h1>
-                <p class="text-xl mb-8 opacity-90">A passionate Software Developer Associate with expertise in Cloud Infrastructure, Backend Development, and Web Applications.</p>
-                <a href="#projects" class="bg-white text-indigo-600 hover:bg-indigo-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">View My Work</a>
+                <p class="text-xl mb-8 opacity-90">A passionate <span class="font-semibold text-yellow-200">Software Developer Associate</span> with expertise in <span class="font-semibold text-yellow-200">Cloud Infrastructure</span>, <span class="font-semibold text-yellow-200">Backend Development</span>, and <span class="font-semibold text-yellow-200">Web Applications</span>.</p>
+                <a href="#projects" class="bg-white text-indigo-600 hover:bg-indigo-100 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-xl">View My Work</a>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-16 px-6 md:px-12 bg-white rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <section id="about" class="py-16 px-6 md:px-12 bg-white rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl fade-in-section">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-gray-800 mb-8 section-title">About Me</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
                         <p class="text-lg leading-relaxed mb-4 text-gray-700">
-                            Welcome to my portfolio! I am Ashwanth Reddy, a Software Developer Associate with experience in designing, developing, and maintaining robust web applications and cloud infrastructure. I hold a Master of Science in Computer Science from Texas A&M University.
+                            Welcome to my portfolio! I am <strong class="text-indigo-700">Ashwanth Reddy</strong>, a <span class="font-semibold text-indigo-600">Software Developer Associate</span> with extensive experience in designing, developing, and maintaining robust <strong class="text-indigo-700">web applications</strong> and <strong class="text-indigo-700">cloud infrastructure</strong>. I hold a <span class="font-semibold">Master of Science in Computer Science</span> from <span class="font-semibold">Texas A&M University</span>.
                         </p>
                         <p class="text-lg leading-relaxed mb-4 text-gray-700">
-                            My expertise spans backend integration, developing monitoring tools, and building RESTful microservices. I have a strong background in AWS services, CI/CD automation, and implementing Infrastructure as Code (IaC).
+                            My expertise spans <span class="font-semibold text-indigo-600">backend integration</span>, developing <strong class="text-indigo-700">monitoring tools</strong>, and building <strong class="text-indigo-700">RESTful microservices</strong>. I have a strong background in <span class="font-semibold text-indigo-600">AWS services</span>, <strong class="text-indigo-700">CI/CD automation</strong>, and implementing <strong class="text-indigo-700">Infrastructure as Code (IaC)</strong>.
                         </p>
                         <p class="text-lg leading-relaxed text-gray-700">
-                            I thrive in dynamic environments, actively contributing to the entire Software Development Life Cycle (SDLC) following Agile/Scrum methodologies. My passion lies in leveraging technology to create impactful and innovative solutions.
+                            I thrive in dynamic environments, actively contributing to the entire <span class="font-semibold">Software Development Life Cycle (SDLC)</span> following <strong class="text-indigo-700">Agile/Scrum methodologies</strong>. My passion lies in leveraging technology to create impactful and innovative solutions.
                         </p>
                     </div>
                     <div class="flex justify-center">
-                        <img src="https://placehold.co/400x300/e0e7ff/4338ca?text=Ashwanth+Reddy" alt="Ashwanth Reddy About Image" class="rounded-lg shadow-xl w-full max-w-md">
+                        <img src="https://placehold.co/400x300/e0e7ff/4338ca?text=Ashwanth+Reddy" alt="Ashwanth Reddy About Image" class="rounded-lg shadow-xl w-full max-w-md transform transition duration-500 hover:scale-105">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-16 px-6 md:px-12 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <section id="experience" class="py-16 px-6 md:px-12 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl fade-in-section">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-gray-800 mb-8 section-title">Experience</h2>
 
                 <!-- Metasys LLC Experience -->
-                <div class="bg-white p-8 rounded-lg shadow-md mb-8 border border-gray-200">
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8 border border-gray-200 hover:shadow-xl hover:border-indigo-300 transition-all duration-300 ease-in-out transform hover:-translate-y-1">
                     <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Software Developer Associate - Metasys LLC</h3>
-                    <p class="text-gray-600 mb-4">Client: Pennsylvania Justice Network (JNET) | Mechanicsburg, PA | July 2023 - Present</p>
+                    <p class="text-gray-600 mb-4"><span class="font-medium">Client: Pennsylvania Justice Network (JNET)</span> | Mechanicsburg, PA | <span class="font-medium">July 2023 - Present</span></p>
                     <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Developed and maintained IBM DataPower services including Web Service Proxy, Multi-Protocol Gateway (MPGW), GatewayScript and reverse proxy configurations for seamless backend integration.</li>
-                        <li>Implemented RBM with AD, configured Crypto Objects, AAA, SLM Policies, and enforced security and access controls on the appliance.</li>
-                        <li>Developed monitoring and reporting tools using Python and Java to collect DP Appliance metrics, monitor SSL/TLS and domain certificate expiry, scheduled disabling probes, automate backups to FTP servers, perform firmware upgrades, and manage operations via REST and XML Management Interface on IBM DataPower.</li>
-                        <li>Designed and developed a Python Flask-based IBM MQ monitoring application on AWS ECS, tracking queue depth and channel health with threshold-based alerting.</li>
-                        <li>Built RESTful microservices (LDAPService, Operations Dashboard, MSSQL & MongoDB Integration, data visualization, XML JSON parser and System-level automation) using AWS API, Load Balancer, Lambda, S3, and Route 53.</li>
-                        <li>Refactored Java code and implemented microservices using Spring Boot in ECS for AWS Messaging Infrastructure Modernization Project, efficiently processing notifications and integrating message flow from IBM MQ & Rabbit MQ.</li>
-                        <li>Developed Infrastructure as Code (IaC) using AWS CDK and leveraged Python SDK (Boto3) for integration across AWS services (S3, Route 53, ECS, Secrets Manager, KMS).</li>
-                        <li>Automated end-to-end CI/CD deployments using AWS CodePipeline, CodeBuild, and ECR for containerized application delivery.</li>
-                        <li>Actively contributed to the entire Software Development Life Cycle (SDLC) of application development, following Agile/Scrum methodologies.</li>
+                        <li>Developed and maintained <strong class="text-indigo-700">IBM DataPower services</strong> including Web Service Proxy, Multi-Protocol Gateway (MPGW), GatewayScript and reverse proxy configurations for seamless backend integration.</li>
+                        <li>Implemented <span class="font-semibold">RBM with AD</span>, configured Crypto Objects, <span class="font-semibold">AAA, SLM Policies</span>, and enforced security and access controls on the appliance.</li>
+                        <li>Developed <strong class="text-indigo-700">monitoring and reporting tools</strong> using <span class="font-semibold">Python and Java</span> to collect DP Appliance metrics, monitor SSL/TLS and domain certificate expiry, scheduled disabling probes, automate backups to FTP servers, perform firmware upgrades, and manage operations via <span class="font-semibold">REST and XML Management Interface</span> on IBM DataPower.</li>
+                        <li>Designed and developed a <strong class="text-indigo-700">Python Flask-based IBM MQ monitoring application on AWS ECS</strong>, tracking queue depth and channel health with threshold-based alerting.</li>
+                        <li>Built <strong class="text-indigo-700">RESTful microservices</strong> (LDAPService, Operations Dashboard, MSSQL & MongoDB Integration, data visualization, XML JSON parser and System-level automation) using <span class="font-semibold">AWS API, Load Balancer, Lambda, S3, and Route 53</span>.</li>
+                        <li>Refactored <span class="font-semibold">Java code</span> and implemented <strong class="text-indigo-700">microservices using Spring Boot in ECS</strong> for AWS Messaging Infrastructure Modernization Project, efficiently processing notifications and integrating message flow from <span class="font-semibold">IBM MQ & Rabbit MQ</span>.</li>
+                        <li>Developed <strong class="text-indigo-700">Infrastructure as Code (IaC) using AWS CDK</strong> and leveraged <span class="font-semibold">Python SDK (Boto3)</span> for integration across <span class="font-semibold">AWS services (S3, Route 53, ECS, Secrets Manager, KMS)</span>.</li>
+                        <li>Automated <strong class="text-indigo-700">end-to-end CI/CD deployments</strong> using <span class="font-semibold">AWS CodePipeline, CodeBuild, and ECR</span> for containerized application delivery.</li>
+                        <li>Actively contributed to the entire <span class="font-semibold">Software Development Life Cycle (SDLC)</span> of application development, following <span class="font-semibold">Agile/Scrum methodologies</span>.</li>
                     </ul>
                 </div>
 
                 <!-- Texas A&M University Experience -->
-                <div class="bg-white p-8 rounded-lg shadow-md mb-8 border border-gray-200">
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8 border border-gray-200 hover:shadow-xl hover:border-indigo-300 transition-all duration-300 ease-in-out transform hover:-translate-y-1">
                     <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Graduate - Teaching & Research Assistant - Texas A&M University</h3>
-                    <p class="text-gray-600 mb-4">College of Science & Engineering | Corpus Christi, TX | Jan 2022 - May 2023</p>
+                    <p class="text-gray-600 mb-4"><span class="font-medium">College of Science & Engineering</span> | Corpus Christi, TX | <span class="font-medium">Jan 2022 - May 2023</span></p>
                     <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Served as a Teaching Assistant for courses including EEEN3315 - Electrical Circuits II, EEE3350 - Electronic Systems Design, Circuit Analysis Laboratory, and Digital Systems Laboratory.</li>
-                        <li>Conducted research focused on identification and classification of X-ray images from the New Mexico Decedent Image Database (NMDID) for forensic and medical analysis.</li>
-                        <li>Designed and implemented a deep learning solution using a Triplet Network architecture to retrieve the top 10 visually similar images from an input X-ray.</li>
-                        <li>Developed a Python-based algorithm utilizing a CNN ResNet50 model with Triplet Loss to generate distinctive image embeddings.</li>
+                        <li>Served as a <span class="font-semibold">Teaching Assistant</span> for courses including EEEN3315 - Electrical Circuits II, EEE3350 - Electronic Systems Design, Circuit Analysis Laboratory, and Digital Systems Laboratory.</li>
+                        <li>Conducted <strong class="text-indigo-700">research focused on identification and classification of X-ray images</strong> from the New Mexico Decedent Image Database (NMDID) for forensic and medical analysis.</li>
+                        <li>Designed and implemented a <strong class="text-indigo-700">deep learning solution</strong> using a <span class="font-semibold">Triplet Network architecture</span> to retrieve the top 10 visually similar images from an input X-ray.</li>
+                        <li>Developed a <strong class="text-indigo-700">Python-based algorithm</strong> utilizing a <span class="font-semibold">CNN ResNet50 model with Triplet Loss</span> to generate distinctive image embeddings.</li>
                         <li>Preprocessed and organized large-scale medical datasets by converting DICOM to PNG, and structured image groups into anchor, positive, and negative sets for training.</li>
-                        <li>Leveraged Python libraries including TensorFlow, NumPy, Matplotlib, and pathlib for image preprocessing, augmentation, and building the dataset pipeline.</li>
+                        <li>Leveraged <span class="font-semibold">Python libraries including TensorFlow, NumPy, Matplotlib, and pathlib</span> for image preprocessing, augmentation, and building the dataset pipeline.</li>
                         <li>Automated similarity score computation by dynamically managing datasets, reshaping image arrays, and generating ranked outputs.</li>
-                        <li>Visualized model results using 3D Slicer (v5.0.3) to display and evaluate the top 10 similar images for each input query.</li>
+                        <li>Visualized model results using <span class="font-semibold">3D Slicer (v5.0.3)</span> to display and evaluate the top 10 similar images for each input query.</li>
                     </ul>
                 </div>
 
                 <!-- Invizo Technologies Pvt Ltd Experience -->
-                <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200">
+                <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200 hover:shadow-xl hover:border-indigo-300 transition-all duration-300 ease-in-out transform hover:-translate-y-1">
                     <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Programmer Analyst - Invizo Technologies Pvt Ltd</h3>
-                    <p class="text-gray-600 mb-4">Hyderabad, India | July 2019 - Mar 2021</p>
+                    <p class="text-gray-600 mb-4">Hyderabad, India | <span class="font-medium">July 2019 - Mar 2021</span></p>
                     <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Worked on developing B2C product "ELIVIO" (Family Health, Personal Finance Management, Bill payments) and "TROVA" (Small-Medium industries for managing business operations & workforce).</li>
-                        <li>Utilized J2EE technologies (Spring Boot, Spring, Hibernate, Spring JDBC) to develop robust web applications and integrated RESTful Web Services for efficient data exchange and enhanced functionality.</li>
-                        <li>Employed front-end development techniques such as CSS Flexbox and Grid to create visually appealing and dynamic layouts, ensuring a seamless user experience across different devices.</li>
-                        <li>Experience in designing User Interface (UI) applications using HTML5, CSS, JavaScript, jQuery, AJAX, JSON, Bootstrap, and Responsive design.</li>
+                        <li>Worked on developing B2C product <span class="font-semibold">"ELIVIO"</span> (Family Health, Personal Finance Management, Bill payments) and <span class="font-semibold">"TROVA"</span> (Small-Medium industries for managing business operations & workforce).</li>
+                        <li>Utilized <strong class="text-indigo-700">J2EE technologies (Spring Boot, Spring, Hibernate, Spring JDBC)</strong> to develop robust web applications and integrated <span class="font-semibold">RESTful Web Services</span> for efficient data exchange and enhanced functionality.</li>
+                        <li>Employed <strong class="text-indigo-700">front-end development techniques</strong> such as <span class="font-semibold">CSS Flexbox and Grid</span> to create visually appealing and dynamic layouts, ensuring a seamless user experience across different devices.</li>
+                        <li>Experience in designing <span class="font-semibold">User Interface (UI) applications</span> using <span class="font-semibold">HTML5, CSS, JavaScript, jQuery, AJAX, JSON, Bootstrap, and Responsive design</span>.</li>
                         <li>Ensured compliance with coding standards, source code control, build & deployment procedures, and performance tuning.</li>
-                        <li>Used Postman for API testing, JUnit for unit testing, logback for logging, and JBoss as the server.</li>
-                        <li>Utilized GitHub version control to track and maintain different versions of application code using VS Code and IntelliJ as IDEs and Maven as the build tool.</li>
+                        <li>Used <span class="font-semibold">Postman for API testing</span>, <span class="font-semibold">JUnit for unit testing</span>, logback for logging, and JBoss as the server.</li>
+                        <li>Utilized <strong class="text-indigo-700">GitHub version control</strong> to track and maintain different versions of application code using VS Code and IntelliJ as IDEs and Maven as the build tool.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-16 px-6 md:px-12 bg-white rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <section id="skills" class="py-16 px-6 md:px-12 bg-white rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl fade-in-section">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-gray-800 mb-8 section-title">My Skills</h2>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -163,9 +179,9 @@
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Languages</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li>Python</li>
-                            <li>Java</li>
-                            <li>JavaScript</li>
+                            <li><strong class="text-gray-800">Python</strong></li>
+                            <li><strong class="text-gray-800">Java</strong></li>
+                            <li><strong class="text-gray-800">JavaScript</strong></li>
                             <li>TypeScript</li>
                             <li>SQL</li>
                             <li>XSLT</li>
@@ -175,10 +191,10 @@
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Frontend Development</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li>HTML5, CSS3</li>
-                            <li>JavaScript, TypeScript</li>
+                            <li><strong class="text-gray-800">HTML5, CSS3</strong></li>
+                            <li><strong class="text-gray-800">JavaScript, TypeScript</strong></li>
                             <li>AJAX, jQuery</li>
-                            <li>Node.js, React.js</li>
+                            <li><strong class="text-gray-800">Node.js, React.js</strong></li>
                             <li>Bootstrap, Responsive Design</li>
                         </ul>
                     </div>
@@ -186,8 +202,8 @@
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Backend Development</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li>Flask, Django</li>
-                            <li>Spring Boot, Spring</li>
+                            <li><strong class="text-gray-800">Flask, Django</strong></li>
+                            <li><strong class="text-gray-800">Spring Boot, Spring</strong></li>
                             <li>J2EE, Hibernate</li>
                             <li>RESTful Web Services</li>
                         </ul>
@@ -196,18 +212,18 @@
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Cloud & Infrastructure</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li>AWS, Azure</li>
+                            <li><strong class="text-gray-800">AWS, Azure</strong></li>
                             <li>Docker, Kubernetes</li>
-                            <li>AWS ECS, Lambda, S3, Route 53, KMS, Secrets Manager</li>
-                            <li>AWS CDK, Boto3</li>
-                            <li>CI/CD (AWS CodePipeline, CodeBuild, ECR)</li>
+                            <li><strong class="text-gray-800">AWS ECS, Lambda, S3, Route 53, KMS, Secrets Manager</strong></li>
+                            <li><strong class="text-gray-800">AWS CDK, Boto3</strong></li>
+                            <li><strong class="text-gray-800">CI/CD (AWS CodePipeline, CodeBuild, ECR)</strong></li>
                         </ul>
                     </div>
                     <!-- Databases -->
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Databases</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li>MSSQL, MongoDB</li>
+                            <li><strong class="text-gray-800">MSSQL, MongoDB</strong></li>
                             <li>Amazon DynamoDB, Amazon RDS</li>
                             <li>PostgreSQL, MySQL</li>
                         </ul>
@@ -216,11 +232,11 @@
                     <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200">
                         <h3 class="text-xl font-semibold text-indigo-700 mb-2">Tools & Methodologies</h3>
                         <ul class="list-disc list-inside text-gray-600">
-                            <li>Version Control: GIT</li>
+                            <li><strong class="text-gray-800">Version Control: GIT</strong></li>
                             <li>Build Tools: Maven, Gradle, Grunt, Webpack, Bower</li>
                             <li>Messaging: IBM MQ, Rabbit MQ</li>
-                            <li>Testing: Selenium, Jest, Mocha, Chai, JUnit, Mockito, Postman</li>
-                            <li>Agile/Scrum</li>
+                            <li><strong class="text-gray-800">Testing: Selenium, Jest, Mocha, Chai, JUnit, Mockito, Postman</strong></li>
+                            <li><strong class="text-gray-800">Agile/Scrum</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -228,7 +244,7 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-16 px-6 md:px-12 bg-white rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl">
+        <section id="projects" class="py-16 px-6 md:px-12 bg-white rounded-xl shadow-md mx-4 md:mx-auto mt-8 max-w-6xl fade-in-section">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-gray-800 mb-8 section-title">My Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -237,7 +253,7 @@
                         <img src="https://placehold.co/600x400/a78bfa/ffffff?text=Facial+Recognition" alt="Facial Expression Recognition Project Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Facial Expression Recognition</h3>
-                            <p class="text-gray-700 mb-4">Developed a deep learning solution using a Triplet Network architecture and CNN ResNet50 model with Triplet Loss for facial expression recognition. Utilized Python, TensorFlow, NumPy, and Matplotlib.</p>
+                            <p class="text-gray-700 mb-4">Developed a <span class="font-semibold">deep learning solution</span> using a <span class="font-semibold">Triplet Network architecture</span> and <span class="font-semibold">CNN ResNet50 model</span> with Triplet Loss for facial expression recognition. Utilized <span class="font-semibold">Python, TensorFlow, NumPy, and Matplotlib</span>.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
                                 <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">TensorFlow</span>
@@ -255,7 +271,7 @@
                         <img src="https://placehold.co/600x400/818cf8/ffffff?text=App4Doc" alt="Appointment for Doctor App Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Appointment for Doctor (App4Doc)</h3>
-                            <p class="text-gray-700 mb-4">An Android application developed in Android Studio using Java for managing doctor appointments. Focus on user interface and functionality for seamless scheduling.</p>
+                            <p class="text-gray-700 mb-4">An <span class="font-semibold">Android application</span> developed in <span class="font-semibold">Android Studio</span> using <span class="font-semibold">Java</span> for managing doctor appointments. Focus on user interface and functionality for seamless scheduling.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Java</span>
                                 <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Android Studio</span>
@@ -273,7 +289,7 @@
                         <img src="https://placehold.co/600x400/c4b5fd/ffffff?text=Placement+Prediction" alt="Campus Placement Prediction Project Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Campus Placement Prediction</h3>
-                            <p class="text-gray-700 mb-4">A Flask-based Python application designed to predict campus placements. This project demonstrates skills in web development with Python and data handling.</p>
+                            <p class="text-gray-700 mb-4">A <span class="font-semibold">Flask-based Python application</span> designed to predict campus placements. This project demonstrates skills in <span class="font-semibold">web development with Python</span> and data handling.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
                                 <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Flask</span>
@@ -290,7 +306,7 @@
                         <img src="https://placehold.co/600x400/c4b5fd/ffffff?text=MQ+Monitoring" alt="IBM MQ Monitoring App Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold text-indigo-700 mb-2">IBM MQ Monitoring Application</h3>
-                            <p class="text-gray-700 mb-4">Designed and developed a Python Flask-based IBM MQ monitoring application on AWS ECS, tracking queue depth and channel health with threshold-based alerting. Built RESTful microservices for various integrations.</p>
+                            <p class="text-gray-700 mb-4">Designed and developed a <span class="font-semibold">Python Flask-based IBM MQ monitoring application on AWS ECS</span>, tracking queue depth and channel health with threshold-based alerting. Built <span class="font-semibold">RESTful microservices</span> for various integrations.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
                                 <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Flask</span>
@@ -308,7 +324,7 @@
                         <img src="https://placehold.co/600x400/c4b5fd/ffffff?text=AWS+Messaging" alt="AWS Messaging Infrastructure Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold text-indigo-700 mb-2">AWS Messaging Infrastructure Modernization</h3>
-                            <p class="text-gray-700 mb-4">Refactored Java code and implemented microservices using Spring Boot in AWS ECS to process notifications and integrate message flow from IBM MQ & Rabbit MQ. Developed IaC with AWS CDK and automated CI/CD deployments.</p>
+                            <p class="text-gray-700 mb-4">Refactored <span class="font-semibold">Java code</span> and implemented <span class="font-semibold">microservices using Spring Boot in AWS ECS</span> to process notifications and integrate message flow from <span class="font-semibold">IBM MQ & Rabbit MQ</span>. Developed <span class="font-semibold">IaC with AWS CDK</span> and automated <span class="font-semibold">CI/CD deployments</span>.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Java</span>
                                 <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Spring Boot</span>
@@ -327,7 +343,7 @@
                         <img src="https://placehold.co/600x400/c4b5fd/ffffff?text=X-ray+Classification" alt="X-ray Image Classification Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold text-indigo-700 mb-2">X-ray Image Classification (Research)</h3>
-                            <p class="text-gray-700 mb-4">Conducted research on identifying and classifying X-ray images for forensic and medical analysis. Designed a deep learning solution using a Triplet Network architecture and CNN ResNet50 model to retrieve visually similar images.</p>
+                            <p class="text-gray-700 mb-4">Conducted <span class="font-semibold">research on identifying and classifying X-ray images</span> for forensic and medical analysis. Designed a <span class="font-semibold">deep learning solution</span> using a <span class="font-semibold">Triplet Network architecture</span> and <span class="font-semibold">CNN ResNet50 model</span> to retrieve visually similar images.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
                                 <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-0.5 rounded-full">TensorFlow</span>
@@ -345,9 +361,9 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 px-6 md:px-12 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto mt-8 mb-8 max-w-6xl">
+        <section id="contact" class="py-16 px-6 md:px-12 bg-gray-50 rounded-xl shadow-md mx-4 md:mx-auto mt-8 mb-8 max-w-6xl fade-in-section">
             <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-bold text-gray-800 mb-8 section-title mx-auto">Get in Touch</h2>
+                <h2 class="text-4xl font-bold text-gray-800 mb-8 section-title">Get in Touch</h2>
                 <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
                     I'm always open to new opportunities, collaborations, or just a friendly chat.
                     Feel free to reach out through any of the channels below.
@@ -403,6 +419,28 @@
         });
 
         // Close mobile menu when a link is clicked (handled by inline onclick for simplicity)
+
+        // Intersection Observer for fade-in sections
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        fadeInSections.forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
